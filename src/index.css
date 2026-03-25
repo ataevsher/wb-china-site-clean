@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 25% 97%;
+    --foreground: 220 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 12%;
+
+    --primary: 222 80% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 30% 95%;
+    --secondary-foreground: 220 30% 12%;
+
+    --muted: 220 20% 94%;
+    --muted-foreground: 220 12% 48%;
+
+    --accent: 210 100% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 18% 88%;
+    --input: 220 18% 88%;
+    --ring: 222 80% 45%;
+
+    --radius: 0.625rem;
+
+    /* Custom tokens */
+    --hero-gradient: linear-gradient(145deg, hsl(222 80% 45%) 0%, hsl(225 75% 32%) 45%, hsl(230 65% 18%) 100%);
+    --card-shadow: 0 2px 16px -2px hsl(222 80% 45% / 0.06), 0 1px 4px -1px hsl(222 80% 45% / 0.04);
+    --card-shadow-hover: 0 8px 30px -4px hsl(222 80% 45% / 0.12), 0 2px 8px -2px hsl(222 80% 45% / 0.06);
+    --stat-gradient: linear-gradient(135deg, hsl(222 80% 45% / 0.04), hsl(210 100% 52% / 0.08));
+    --glass-bg: hsl(0 0% 100% / 0.85);
+    --glass-border: hsl(220 18% 88% / 0.6);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: var(--hero-gradient);
+  }
+
+  .stat-gradient {
+    background: var(--stat-gradient);
+  }
+
+  .card-shadow {
+    box-shadow: var(--card-shadow);
+  }
+
+  .card-shadow-hover {
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(222 80% 45%), hsl(210 100% 52%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-color: var(--glass-border);
+  }
+
+  .section-divider {
+    background: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
+    height: 1px;
+  }
+}
